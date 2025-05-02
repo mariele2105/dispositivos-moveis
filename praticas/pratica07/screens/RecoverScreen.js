@@ -1,0 +1,56 @@
+import React from 'react';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+
+function RecoverScreen({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <TextInput 
+        style={styles.input}
+        placeholder="E-mail"
+        keyboardType="email-address"
+      />
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Recuperar Senha</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <Text style={styles.backText}>Voltar para o Login</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+export default RecoverScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 24,
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
+  },
+  input: {
+    height: 48,
+    borderColor: '#999',
+    borderWidth: 1,
+    borderRadius: 4,
+    paddingHorizontal: 12,
+    marginBottom: 16,
+    backgroundColor: '#F5F5F5',
+  },
+  button: {
+    backgroundColor: '#6200EE',
+    paddingVertical: 12,
+    borderRadius: 4,
+    marginBottom: 16,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+  },
+  backText: {
+    color: '#6200EE',
+    fontSize: 14,
+    textAlign: 'center',
+  },
+});
